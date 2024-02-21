@@ -47,6 +47,8 @@ public final class Constants {
     public static final int kArmPort2 = 8;
     public static final int kEncoderPort = 8;
 
+    //Limiting angle for the arm - just off memory, this will be probably around 1.7453
+    public static final double limitingAngleRadians = 1.7453;
     
     public static final double encoderResolution = 2048.0;
     public static final double armDPR = -2 * Math.PI;
