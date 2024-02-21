@@ -24,12 +24,15 @@ public class ArmSubsystem extends SubsystemBase {
         armMotor1.setInverted(false);
         armMotor2.setInverted(true);
         armMotor2.follow(armMotor1, true);
+        //Hehehe radians - makes calculations using trigonometric functions easier - -2π radians for rotation
         encoder.setDistancePerRotation(-ArmConstants.armDPR);
     }
 
     //Control the arm at a certain speed
     //Need to implement limit at x degrees - issue right now is that the encoder's zero is not where we want
-    //This can be adjusted for in code - during robotics we can find the zero and rotate our circle
+    /* 
+        Simple solution: let the encoder tell us where the 0 is
+    */
     public void armControl(double speed) {
          armMotor1.set(0.25 * speed);
         
