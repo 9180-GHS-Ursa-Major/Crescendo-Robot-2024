@@ -28,6 +28,8 @@ public class ArmSubsystem extends SubsystemBase {
     }
 
     //Control the arm at a certain speed
+    //Need to implement limit at x degrees - issue right now is that the encoder's zero is not where we want
+    //This can be adjusted for in code - during robotics we can find the zero and rotate our circle
     public void armControl(double speed) {
          armMotor1.set(0.25 * speed);
         
